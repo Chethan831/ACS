@@ -99,6 +99,7 @@ ul {
   justify-content: center;
   gap: 8px;
   padding: 14px 32px;
+  min-height: 44px;
   border: none;
   border-radius: var(--radius-sm);
   font-size: 1rem;
@@ -106,6 +107,11 @@ ul {
   cursor: pointer;
   transition: var(--transition);
   text-align: center;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -134,6 +140,7 @@ ul {
   background: var(--primary);
   color: var(--white);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.2);
 }
 
 .btn-secondary:focus-visible {
@@ -144,6 +151,7 @@ ul {
 .btn-sm {
   padding: 10px 22px;
   font-size: 0.9rem;
+  min-height: 40px;
 }
 
 /* ---------- Skip to Content ---------- */
@@ -715,19 +723,9 @@ ul {
 
 /* Outline button */
 .btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   background: transparent;
   color: var(--gray-600);
   border: 2px solid var(--gray-200);
-  border-radius: var(--radius-sm);
-  padding: 14px 32px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  font-family: inherit;
 }
 
 .btn-outline:hover {
@@ -898,19 +896,19 @@ ul {
 }
 
 .btn-action {
-  padding: 5px 14px;
+  padding: 6px 16px;
   border: none;
   border-radius: var(--radius-sm);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
   font-family: inherit;
-  margin-right: 6px;
 }
 
 .btn-action:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-action:focus-visible {
@@ -926,11 +924,7 @@ ul {
 .btn-view:hover {
   background: var(--primary);
   color: var(--white);
-}
-
-.btn-view:focus-visible {
-  outline: 3px solid var(--primary-light);
-  outline-offset: 2px;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
 .btn-delete {
