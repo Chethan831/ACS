@@ -2,7 +2,6 @@
    Campus Event Manager - Events Page Logic
    ============================================================ */
 
-// ---------- Event Data ----------
 var eventsData = [
   {
     id: 1,
@@ -102,114 +101,100 @@ var eventsData = [
   },
 ];
 
-// ---------- Helper: seats badge class and label ----------
-function getSeatsInfo(seats) {
-  if (seats <= 30) return { cls: 'limited', label: 'Only ' + seats + ' seats left' };
-  return { cls: 'available', label: seats + ' seats available' };
-}
-
-// ---------- Helper: build HTML for a single event card ----------
-function buildEventCard(ev) {
-  var seatsInfo = getSeatsInfo(ev.seats);
-
-  return (
-    '<div class="event-card">' +
-      '<div class="event-card-image ' + ev.gradient + '">' +
-        '<span class="event-icon">' + ev.icon + '</span>' +
-      '</div>' +
-      '<div class="event-card-body">' +
-        '<span class="event-card-category">' + ev.category + '</span>' +
-        '<h3>' + ev.title + '</h3>' +
-        '<p>' + ev.description + '</p>' +
-        '<span class="seats-badge ' + seatsInfo.cls + '">' +
-          '👤 ' + seatsInfo.label +
-        '</span>' +
-        '<div class="event-card-meta">' +
-          '<span><span class="meta-icon">📅</span> ' + ev.date + '</span>' +
-          '<span><span class="meta-icon">⏰</span> ' + ev.time + '</span>' +
-          '<span><span class="meta-icon">📍</span> ' + ev.venue + '</span>' +
-        '</div>' +
-        '<a href="register.html" class="btn btn-primary btn-sm">Register Now</a>' +
-      '</div>' +
-    '</div>'
-  );
-}
-
-// ---------- Render filtered events into the grid ----------
-function renderEvents(events) {
+(function () {
+  var searchInput = document.getElementById('searchInput');
+  var categorySelect = document.getElementById('categorySelect');
+  var resetBtn = document.getElementById('resetBtn');
   var container = document.getElementById('eventsContainer');
-  if (!container) return;
 
-  // Empty state when no events match
-  if (events.length === 0) {
-    container.innerHTML =
-      '<div class="empty-state">' +
-        '<div class="empty-icon">🔍</div>' +
-        '<h3>No events found.</h3>' +
-        '<p>Try another search or category.</p>' +
-      '</div>';
-    return;
+  function getSeatsInfo(seats) {
+    if (seats <= 30) return { cls: 'limited', label: 'Only ' + seats + ' seats left' };
+    return { cls: 'available', label: seats + ' seats available' };
   }
 
-  var html = '';
-  for (var i = 0; i < events.length; i++) {
-    html += buildEventCard(events[i]);
+  function buildEventCard(ev) {
+    var seatsInfo = getSeatsInfo(ev.seats);
+
+    return (
+      '<div class="event-card">' +
+        '<div class="event-card-image ' + ev.gradient + '">' +
+          '<span class="event-icon">' + ev.icon + '</span>' +
+        '</div>' +
+        '<div class="event-card-body">' +
+          '<span class="event-card-category">' + ev.category + '</span>' +
+          '<h3>' + ev.title + '</h3>' +
+          '<p>' + ev.description + '</p>' +
+          '<span class="seats-badge ' + seatsInfo.cls + '">' +
+            '👤 ' + seatsInfo.label +
+          '</span>' +
+          '<div class="event-card-meta">' +
+            '<span><span class="meta-icon">📅</span> ' + ev.date + '</span>' +
+            '<span><span class="meta-icon">⏰</span> ' + ev.time + '</span>' +
+            '<span><span class="meta-icon">📍</span> ' + ev.venue + '</span>' +
+          '</div>' +
+          '<a href="register.html" class="btn btn-primary btn-sm">Register Now</a>' +
+        '</div>' +
+      '</div>'
+    );
   }
-  container.innerHTML = html;
-}
 
-// ---------- Apply search query + category filter together ----------
-function filterEvents() {
-  var query = document.getElementById('searchInput').value.trim().toLowerCase();
-  var category = document.getElementById('categorySelect').value;
+  function renderEvents(events) {
+    if (!container) return;
 
-  var filtered = eventsData.filter(function (ev) {
-    // Category check
-    if (category !== 'all' && ev.category !== category) {
-      return false;
+    if (events.length === 0) {
+      container.innerHTML =
+        '<div class="empty-state">' +
+          '<div class="empty-icon">🔍</div>' +
+          '<h3>No events found.</h3>' +
+          '<p>Try another search or category.</p>' +
+        '</div>';
+      return;
     }
-    // Search query check (match name, category, or venue)
-    if (query !== '') {
+
+    var html = '';
+    for (var i = 0; i < events.length; i++) {
+      html += buildEventCard(events[i]);
+    }
+    container.innerHTML = html;
+  }
+
+  function filterEvents() {
+    var query = searchInput.value.trim().toLowerCase();
+    var category = categorySelect.value;
+
+    var filtered = eventsData.filter(function (ev) {
+      if (category !== 'all' && ev.category !== category) return false;
+      if (query === '') return true;
       return (
         ev.title.toLowerCase().indexOf(query) !== -1 ||
         ev.category.toLowerCase().indexOf(query) !== -1 ||
         ev.venue.toLowerCase().indexOf(query) !== -1
       );
-    }
-    return true;
-  });
+    });
 
-  renderEvents(filtered);
-}
+    renderEvents(filtered);
+  }
 
-// ---------- Reset filters to show all events ----------
-function resetFilters() {
-  document.getElementById('searchInput').value = '';
-  document.getElementById('categorySelect').value = 'all';
-  filterEvents();
-}
+  function resetFilters() {
+    searchInput.value = '';
+    categorySelect.value = 'all';
+    filterEvents();
+  }
 
-// ---------- Initialise event listeners ----------
-(function init() {
-  var searchInput = document.getElementById('searchInput');
-  var categorySelect = document.getElementById('categorySelect');
-  var resetBtn = document.getElementById('resetBtn');
+  // Render on page load
+  if (container) {
+    filterEvents();
+  }
 
-  // Real-time search as user types
   if (searchInput) {
     searchInput.addEventListener('input', filterEvents);
   }
 
-  // Filter on category change
   if (categorySelect) {
     categorySelect.addEventListener('change', filterEvents);
   }
 
-  // Reset button clears everything
   if (resetBtn) {
     resetBtn.addEventListener('click', resetFilters);
   }
-
-  // Render all events on page load
-  filterEvents();
 })();
