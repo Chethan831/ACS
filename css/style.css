@@ -866,9 +866,9 @@ ul {
 }
 
 /* Event name in table */
-.cell-event {
+.admin-table .cell-event {
   font-weight: 600;
-  color: var(--primary) !important;
+  color: var(--primary);
 }
 
 /* Action buttons in table */
