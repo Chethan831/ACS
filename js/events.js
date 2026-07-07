@@ -118,7 +118,7 @@ var eventsData = [
     return (
       '<div class="event-card">' +
         '<div class="event-card-image ' + ev.gradient + '">' +
-          '<span class="event-icon">' + ev.icon + '</span>' +
+          '<span class="event-icon" aria-hidden="true">' + ev.icon + '</span>' +
         '</div>' +
         '<div class="event-card-body">' +
           '<span class="event-card-category">' + ev.category + '</span>' +

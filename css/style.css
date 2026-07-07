@@ -301,11 +301,6 @@ ul {
   box-shadow: var(--shadow-lg);
 }
 
-.stat-card:focus-visible {
-  outline: 3px solid var(--primary-light);
-  outline-offset: 2px;
-}
-
 .stat-card .stat-icon {
   font-size: 2.4rem;
   margin-bottom: 12px;
@@ -354,11 +349,6 @@ ul {
 .event-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-}
-
-.event-card:focus-visible {
-  outline: 3px solid var(--primary-light);
-  outline-offset: 2px;
 }
 
 /* Image placeholder area */
@@ -588,11 +578,6 @@ ul {
 .seats-badge.limited {
   background: rgba(245, 158, 11, 0.12);
   color: var(--accent);
-}
-
-.seats-badge.full {
-  background: rgba(239, 68, 68, 0.12);
-  color: var(--danger);
 }
 
 /* Gradient classes for 8 event cards */
@@ -833,8 +818,6 @@ ul {
   max-width: 450px;
 }
 
-
-
 /* Table wrapper (scrollable on small screens) */
 .table-wrapper {
   overflow-x: auto;
@@ -943,28 +926,6 @@ ul {
 .btn-delete:focus-visible {
   outline: 3px solid var(--danger);
   outline-offset: 2px;
-}
-
-/* Admin empty state */
-.admin-empty {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--gray-400);
-}
-
-.admin-empty .empty-icon {
-  font-size: 4rem;
-  margin-bottom: 12px;
-}
-
-.admin-empty h3 {
-  font-size: 1.3rem;
-  color: var(--gray-600);
-  margin-bottom: 6px;
-}
-
-.admin-empty p {
-  color: var(--gray-400);
 }
 
 /* ---------- View Modal ---------- */
@@ -1332,10 +1293,6 @@ ul {
   .admin-table td {
     padding: 10px 12px;
     font-size: 0.82rem;
-  }
-
-  .admin-empty {
-    padding: 40px 20px;
   }
 
   /* ---------- Back to Top ---------- */

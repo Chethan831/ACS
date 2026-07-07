@@ -11,8 +11,7 @@
 </head>
 <body>
 
-  <!-- ===== Navigation Bar ===== -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="logo">
         <span class="logo-icon">CE</span>
@@ -42,17 +41,17 @@
       <!-- Statistics Cards -->
       <div class="admin-stats">
         <div class="stat-card">
-          <div class="stat-icon">📋</div>
+          <div class="stat-icon" aria-hidden="true">📋</div>
           <div class="stat-number" id="totalRegistrations">0</div>
           <div class="stat-label">Total Registrations</div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon">🎯</div>
+          <div class="stat-icon" aria-hidden="true">🎯</div>
           <div class="stat-number" id="uniqueEvents">0</div>
           <div class="stat-label">Unique Events</div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon">📅</div>
+          <div class="stat-icon" aria-hidden="true">📅</div>
           <div class="stat-number" id="todayRegistrations">0</div>
           <div class="stat-label">Today's Registrations</div>
         </div>
@@ -61,7 +60,7 @@
       <!-- Search Bar -->
       <div class="admin-search">
         <div class="search-wrapper">
-          <span class="search-icon">🔍</span>
+          <span class="search-icon" aria-hidden="true">🔍</span>
           <label for="adminSearchInput" class="sr-only">Search by Name, USN or Event</label>
           <input
             type="text"
@@ -96,7 +95,7 @@
       </div>
 
       <!-- Empty State (hidden by default) -->
-      <div class="admin-empty" id="adminEmpty" style="display:none;">
+      <div class="empty-state" id="adminEmpty" style="display:none;">
         <div class="empty-icon">📭</div>
         <h3>No registrations found.</h3>
         <p>Register students to see data here.</p>

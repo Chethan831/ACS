@@ -5,30 +5,29 @@
 (function () {
   var tableBody = document.getElementById('adminTableBody');
   var emptyState = document.getElementById('adminEmpty');
+  var statsTotal = document.getElementById('totalRegistrations');
+  var statsUnique = document.getElementById('uniqueEvents');
+  var statsToday = document.getElementById('todayRegistrations');
   var searchInput = document.getElementById('adminSearchInput');
   var modalOverlay = document.getElementById('viewModal');
   var modalBody = document.getElementById('modalBody');
   var modalClose = document.getElementById('modalClose');
 
   function updateStatistics(registrations) {
-    var totalEl = document.getElementById('totalRegistrations');
-    var uniqueEl = document.getElementById('uniqueEvents');
-    var todayEl = document.getElementById('todayRegistrations');
-
-    if (totalEl) totalEl.textContent = registrations.length;
+    if (statsTotal) statsTotal.textContent = registrations.length;
 
     var eventNames = [];
     for (var i = 0; i < registrations.length; i++) {
       var ev = registrations[i].event;
       if (eventNames.indexOf(ev) === -1) eventNames.push(ev);
     }
-    if (uniqueEl) uniqueEl.textContent = eventNames.length;
+    if (statsUnique) statsUnique.textContent = eventNames.length;
 
     var todayCount = 0;
     for (var j = 0; j < registrations.length; j++) {
       if (App.isToday(registrations[j].registeredAt)) todayCount++;
     }
-    if (todayEl) todayEl.textContent = todayCount;
+    if (statsToday) statsToday.textContent = todayCount;
   }
 
   function deleteRegistration(id) {
