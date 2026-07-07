@@ -1093,6 +1093,27 @@ ul {
   outline-offset: 2px;
 }
 
+/* ---------- Loading Spinner ---------- */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--gray-400);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ---------- Back to Top Button ---------- */
 .back-to-top {
   position: fixed;

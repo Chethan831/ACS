@@ -120,10 +120,14 @@
   }
 
   function loadAndRender() {
-    var allRegs = App.getRegistrations();
-    var query = searchInput ? searchInput.value : '';
-    var filtered = searchRegistrations(allRegs, query);
-    renderDashboard(filtered);
+    App.showSpinner(tableBody);
+
+    setTimeout(function () {
+      var allRegs = App.getRegistrations();
+      var query = searchInput ? searchInput.value : '';
+      var filtered = searchRegistrations(allRegs, query);
+      renderDashboard(filtered);
+    }, 16);
   }
 
   (function init() {

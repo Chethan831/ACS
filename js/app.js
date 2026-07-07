@@ -26,6 +26,18 @@ App.saveRegistration = function (registration) {
   localStorage.setItem(App.STORAGE_KEYS.REGISTRATIONS, JSON.stringify(registrations));
 };
 
+App.showSpinner = function (container) {
+  if (!container) return;
+  container.innerHTML = '<div class="loading" role="status" aria-label="Loading"><div class="spinner"></div></div>';
+};
+
+App.loadWithSpinner = function (container, renderFn) {
+  App.showSpinner(container);
+  setTimeout(function () {
+    renderFn();
+  }, 16);
+};
+
 App.escapeHtml = function (text) {
   var d = document.createElement('div');
   d.appendChild(document.createTextNode(text));

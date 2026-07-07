@@ -162,17 +162,21 @@ var eventsData = [
     var query = searchInput.value.trim().toLowerCase();
     var category = categorySelect.value;
 
-    var filtered = eventsData.filter(function (ev) {
-      if (category !== 'all' && ev.category !== category) return false;
-      if (query === '') return true;
-      return (
-        ev.title.toLowerCase().indexOf(query) !== -1 ||
-        ev.category.toLowerCase().indexOf(query) !== -1 ||
-        ev.venue.toLowerCase().indexOf(query) !== -1
-      );
-    });
+    App.showSpinner(container);
 
-    renderEvents(filtered);
+    setTimeout(function () {
+      var filtered = eventsData.filter(function (ev) {
+        if (category !== 'all' && ev.category !== category) return false;
+        if (query === '') return true;
+        return (
+          ev.title.toLowerCase().indexOf(query) !== -1 ||
+          ev.category.toLowerCase().indexOf(query) !== -1 ||
+          ev.venue.toLowerCase().indexOf(query) !== -1
+        );
+      });
+
+      renderEvents(filtered);
+    }, 16);
   }
 
   function resetFilters() {
