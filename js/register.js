@@ -38,38 +38,38 @@
   }
 
   function validateName(value) {
-    if (!value.trim()) return 'Please enter your full name. This field cannot be left empty.';
-    if (value.trim().length < 2) return 'Full name must be at least 2 characters long. Please enter a valid name.';
+    if (!value.trim()) return 'We need your full name to complete the registration.';
+    if (value.trim().length < 2) return 'Please enter your full name — it should be at least 2 characters.';
     return null;
   }
 
   function validateUSN(value) {
-    if (!value.trim()) return 'Please enter your USN (University Serial Number), e.g., 1AY21CS001.';
+    if (!value.trim()) return 'Please provide your USN so we can identify you (e.g., 1AY21CS001).';
     return null;
   }
 
   function validateDepartment(value) {
-    if (!value.trim()) return 'Please enter your department name, e.g., Computer Science.';
+    if (!value.trim()) return 'Tell us your department so we can group registrations (e.g., Computer Science).';
     return null;
   }
 
   function validateEmail(value) {
-    if (!value.trim()) return 'Please enter your email address, e.g., you@example.com.';
+    if (!value.trim()) return 'An email address is required so we can send you updates (e.g., you@example.com).';
     if (value.trim().indexOf('@') === -1 || value.trim().indexOf('.') === -1) {
-      return 'Please enter a valid email address with the format username@domain.com.';
+      return 'Hmm, that does not look like a valid email. Please use a format like username@domain.com.';
     }
     return null;
   }
 
   function validatePhone(value) {
     var digits = value.trim().replace(/\D/g, '');
-    if (!value.trim()) return 'Please enter your 10-digit phone number, e.g., 9876543210.';
-    if (digits.length !== 10) return 'Phone number must be exactly 10 digits. Enter a valid 10-digit phone number without country code.';
+    if (!value.trim()) return 'A phone number helps us reach you quickly (e.g., 9876543210).';
+    if (digits.length !== 10) return 'Phone numbers must be exactly 10 digits. Please enter a valid number without spaces or prefixes.';
     return null;
   }
 
   function validateEvent(value) {
-    if (!value) return 'Please select an event from the dropdown list to continue registration.';
+    if (!value) return 'Pick an event from the list so we know which one you are registering for.';
     return null;
   }
 

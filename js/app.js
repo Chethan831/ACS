@@ -12,6 +12,7 @@ App.getRegistrations = function () {
     if (Array.isArray(parsed)) return parsed;
     return [];
   } catch (e) {
+    console.warn('Failed to read registrations from storage:', e);
     return [];
   }
 };

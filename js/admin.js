@@ -27,7 +27,7 @@
   }
 
   function deleteRegistration(id) {
-    if (!confirm('Are you sure you want to delete this registration?')) return;
+    if (!confirm('This will permanently remove this registration. Are you sure?')) return;
 
     var registrations = App.getRegistrations();
     var updated = [];

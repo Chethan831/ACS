@@ -138,7 +138,7 @@ var eventsData = [
     if (!container) return;
 
     if (events.length === 0) {
-      App.renderEmptyState(container, '🔍', 'No events found.', 'Try another search or category.');
+      App.renderEmptyState(container, '🔍', 'No matching events', 'Try adjusting your search or choosing a different category.');
       return;
     }
 
