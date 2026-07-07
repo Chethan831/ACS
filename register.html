@@ -40,35 +40,30 @@
   <section class="register-section">
     <div class="container">
 
-      <!-- Form Card -->
       <div class="form-card" id="formCard">
 
         <h2>Student Details</h2>
 
         <form id="registrationForm" novalidate class="space-y-4">
 
-          <!-- Full Name -->
           <div class="form-group">
             <label for="fullName">Full Name <span class="required">*</span></label>
             <input type="text" id="fullName" placeholder="Enter your full name" autocomplete="name" class="w-full" />
             <div class="error-text" id="fullNameError" role="alert"></div>
           </div>
 
-          <!-- USN -->
           <div class="form-group">
             <label for="usn">USN <span class="required">*</span></label>
             <input type="text" id="usn" placeholder="e.g. 1AY21CS001" autocomplete="off" class="w-full" />
             <div class="error-text" id="usnError" role="alert"></div>
           </div>
 
-          <!-- Department -->
           <div class="form-group">
             <label for="department">Department <span class="required">*</span></label>
             <input type="text" id="department" placeholder="e.g. Computer Science" autocomplete="off" class="w-full" />
             <div class="error-text" id="departmentError" role="alert"></div>
           </div>
 
-          <!-- Email + Phone side by side -->
           <div class="form-row sm:gap-4">
             <div class="form-group sm:flex-1">
               <label for="email">Email Address <span class="required">*</span></label>
@@ -82,7 +77,6 @@
             </div>
           </div>
 
-          <!-- Event Dropdown -->
           <div class="form-group">
             <label for="eventSelect">Select Event <span class="required">*</span></label>
             <select id="eventSelect" class="w-full">
@@ -99,7 +93,6 @@
             <div class="error-text" id="eventSelectError" role="alert"></div>
           </div>
 
-          <!-- Action Buttons -->
           <div class="form-actions gap-3">
             <button type="submit" class="btn btn-primary w-full sm:w-auto min-h-[44px]">Register Now</button>
             <button type="reset" class="btn btn-outline w-full sm:w-auto min-h-[44px]" id="resetBtn">Reset</button>
@@ -107,7 +100,6 @@
 
         </form>
 
-        <!-- Success Message (hidden by default) -->
         <div class="success-card" id="successCard" style="display:none;">
           <div class="success-icon" aria-hidden="true">&#10003;</div>
           <h2>Registration Successful</h2>

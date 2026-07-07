@@ -176,7 +176,6 @@ var eventsData = [
     filterEvents();
   }
 
-  // Render on page load
   if (container) {
     filterEvents();
   }

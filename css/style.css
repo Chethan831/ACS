@@ -190,7 +190,6 @@ ul {
   height: 70px;
 }
 
-/* Logo */
 .navbar .logo {
   display: flex;
   align-items: center;
@@ -213,7 +212,6 @@ ul {
   font-weight: 700;
 }
 
-/* Navigation links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -362,7 +360,6 @@ ul {
   gap: 24px;
 }
 
-/* Event Card */
 .event-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -378,7 +375,6 @@ ul {
   box-shadow: var(--shadow-lg);
 }
 
-/* Image placeholder area */
 .event-card-image {
   height: 200px;
   display: flex;
@@ -394,7 +390,6 @@ ul {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Card body */
 .event-card-body {
   padding: 22px;
   flex: 1;
@@ -430,7 +425,6 @@ ul {
   flex: 1;
 }
 
-/* Meta info (date, venue) */
 .event-card-meta {
   display: flex;
   flex-direction: column;
@@ -518,7 +512,6 @@ ul {
   flex-wrap: wrap;
 }
 
-/* Search input wrapper with icon */
 .search-wrapper {
   display: flex;
   align-items: center;
@@ -559,7 +552,6 @@ ul {
   color: var(--gray-400);
 }
 
-/* Category dropdown */
 .category-select {
   padding: 12px 20px;
   border: 2px solid var(--gray-200);
@@ -625,7 +617,6 @@ ul {
   flex: 1;
 }
 
-/* Form card */
 .form-card {
   max-width: 640px;
   margin: 0 auto;
@@ -645,7 +636,6 @@ ul {
   border-bottom: 2px solid var(--gray-100);
 }
 
-/* Form group */
 .form-group {
   margin-bottom: 20px;
 }
@@ -700,7 +690,6 @@ ul {
   display: block;
 }
 
-/* Side-by-side row */
 .form-row {
   display: flex;
   gap: 16px;
@@ -710,7 +699,6 @@ ul {
   flex: 1;
 }
 
-/* Action buttons */
 .form-actions {
   display: flex;
   gap: 12px;
@@ -723,7 +711,6 @@ ul {
   font-size: 1rem;
 }
 
-/* Outline button */
 .btn-outline {
   background: transparent;
   color: var(--gray-600);
@@ -742,7 +729,6 @@ ul {
   outline-offset: 2px;
 }
 
-/* Success card */
 .success-card {
   text-align: center;
   padding: 20px 10px;
@@ -834,7 +820,6 @@ ul {
   box-shadow: var(--shadow);
 }
 
-/* Search bar for admin */
 .admin-search {
   margin-bottom: 24px;
   max-width: 450px;
@@ -888,13 +873,11 @@ ul {
   border-bottom: none;
 }
 
-/* Event name in table */
 .admin-table .cell-event {
   font-weight: 600;
   color: var(--primary);
 }
 
-/* Action buttons in table */
 .cell-actions {
   white-space: nowrap;
 }
