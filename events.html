@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     Campus Event Manager - Events Page (Phase 1 placeholder)
+     Campus Event Manager - Events Page
      ============================================================ -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Event Manager - Events</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -27,23 +27,69 @@
     </div>
   </nav>
 
-  <!-- ===== Placeholder Content ===== -->
-  <section class="placeholder-page">
-    <div class="placeholder-content">
-      <div class="placeholder-icon">📋</div>
-      <h2>Events Page</h2>
-      <p>Browse and discover all campus events — coming soon.</p>
+  <!-- ===== Page Hero ===== -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1>Upcoming Events</h1>
+      <p>Discover exciting workshops, hackathons, seminars and college activities.</p>
+    </div>
+  </section>
+
+  <!-- ===== Filter Bar ===== -->
+  <section class="filter-bar-section">
+    <div class="container">
+      <div class="filter-bar">
+
+        <!-- Search input with icon -->
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <label for="searchInput" class="sr-only">Search events</label>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search events..."
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Category dropdown -->
+        <label for="categorySelect" class="sr-only">Filter by category</label>
+        <select id="categorySelect" class="category-select">
+          <option value="all">All Categories</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Hackathon">Hackathon</option>
+          <option value="Seminar">Seminar</option>
+          <option value="Technology">Technology</option>
+          <option value="Cultural">Cultural</option>
+          <option value="Sports">Sports</option>
+          <option value="Startup">Startup</option>
+        </select>
+
+        <!-- Reset button -->
+        <button id="resetBtn" class="btn btn-secondary btn-sm">Reset Filters</button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Events Grid ===== -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="event-grid events-grid" id="eventsContainer">
+        <!-- Cards rendered by events.js -->
+      </div>
     </div>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Campus Event Manager. All rights reserved.</p>
+      <p>Campus Event Manager &amp;copy; 2026. Developed for Source Code Management Lab</p>
     </div>
   </footer>
 
-  <!-- ===== Back to Top Button ===== -->
+  <!-- ===== Back to Top ===== -->
   <button id="backToTop" class="back-to-top" title="Back to top">&uarr;</button>
 
   <!-- ===== Scripts ===== -->

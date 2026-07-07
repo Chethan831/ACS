@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     Campus Event Manager - Admin Page (Phase 1 placeholder)
+     Campus Event Manager - Admin Dashboard
      ============================================================ -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Event Manager - Admin</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -27,23 +27,103 @@
     </div>
   </nav>
 
-  <!-- ===== Placeholder Content ===== -->
-  <section class="placeholder-page">
-    <div class="placeholder-content">
-      <div class="placeholder-icon">⚙️</div>
-      <h2>Admin Dashboard</h2>
-      <p>Manage events and registrations — coming soon.</p>
+  <!-- ===== Page Hero ===== -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1>Admin Dashboard</h1>
+      <p>Manage and monitor all event registrations.</p>
     </div>
   </section>
+
+  <!-- ===== Admin Section ===== -->
+  <section class="admin-section">
+    <div class="container">
+
+      <!-- Statistics Cards -->
+      <div class="admin-stats">
+        <div class="stat-card">
+          <div class="stat-icon">📋</div>
+          <div class="stat-number" id="totalRegistrations">0</div>
+          <div class="stat-label">Total Registrations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-number" id="uniqueEvents">0</div>
+          <div class="stat-label">Unique Events</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="stat-number" id="todayRegistrations">0</div>
+          <div class="stat-label">Today's Registrations</div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="admin-search">
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <label for="adminSearchInput" class="sr-only">Search by Name, USN or Event</label>
+          <input
+            type="text"
+            id="adminSearchInput"
+            class="search-input"
+            placeholder="Search by Name, USN or Event"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <!-- Registrations Table Wrapper (scrollable on small screens) -->
+      <div class="table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Full Name</th>
+              <th>USN</th>
+              <th>Department</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody">
+            <!-- Rows rendered by admin.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State (hidden by default) -->
+      <div class="admin-empty" id="adminEmpty" style="display:none;">
+        <div class="empty-icon">📭</div>
+        <h3>No registrations found.</h3>
+        <p>Register students to see data here.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== View Modal Overlay ===== -->
+  <div class="modal-overlay" id="viewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
+      <h2 id="modalTitle">Registration Details</h2>
+      <div class="modal-body" id="modalBody">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </div>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Campus Event Manager. All rights reserved.</p>
+      <p>Campus Event Manager &amp;copy; 2026. Developed for Source Code Management Lab</p>
     </div>
   </footer>
 
-  <!-- ===== Back to Top Button ===== -->
+  <!-- ===== Back to Top ===== -->
   <button id="backToTop" class="back-to-top" title="Back to top">&uarr;</button>
 
   <!-- ===== Scripts ===== -->

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     Campus Event Manager - Register Page (Phase 1 placeholder)
+     Campus Event Manager - Registration Page
      ============================================================ -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Event Manager - Register</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -27,23 +27,106 @@
     </div>
   </nav>
 
-  <!-- ===== Placeholder Content ===== -->
-  <section class="placeholder-page">
-    <div class="placeholder-content">
-      <div class="placeholder-icon">📝</div>
-      <h2>Registration</h2>
-      <p>Sign up for your favorite events — coming soon.</p>
+  <!-- ===== Page Hero ===== -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1>Event Registration</h1>
+      <p>Complete the form below to reserve your seat for an upcoming event.</p>
+    </div>
+  </section>
+
+  <!-- ===== Registration Section ===== -->
+  <section class="register-section">
+    <div class="container">
+
+      <!-- Form Card -->
+      <div class="form-card" id="formCard">
+
+        <h2>Student Details</h2>
+
+        <form id="registrationForm" novalidate>
+
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" placeholder="Enter your full name" autocomplete="name" />
+            <div class="error-text" id="fullNameError"></div>
+          </div>
+
+          <!-- USN -->
+          <div class="form-group">
+            <label for="usn">USN <span class="required">*</span></label>
+            <input type="text" id="usn" placeholder="e.g. 1AY21CS001" autocomplete="off" />
+            <div class="error-text" id="usnError"></div>
+          </div>
+
+          <!-- Department -->
+          <div class="form-group">
+            <label for="department">Department <span class="required">*</span></label>
+            <input type="text" id="department" placeholder="e.g. Computer Science" autocomplete="off" />
+            <div class="error-text" id="departmentError"></div>
+          </div>
+
+          <!-- Email + Phone side by side -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" placeholder="you@example.com" autocomplete="email" />
+              <div class="error-text" id="emailError"></div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" placeholder="9876543210" autocomplete="tel" />
+              <div class="error-text" id="phoneError"></div>
+            </div>
+          </div>
+
+          <!-- Event Dropdown -->
+          <div class="form-group">
+            <label for="eventSelect">Select Event <span class="required">*</span></label>
+            <select id="eventSelect">
+              <option value="">-- Choose an event --</option>
+              <option value="AI Workshop">AI Workshop</option>
+              <option value="Web Development Bootcamp">Web Development Bootcamp</option>
+              <option value="Hackathon 2026">Hackathon 2026</option>
+              <option value="Career Guidance Seminar">Career Guidance Seminar</option>
+              <option value="Cyber Security Summit">Cyber Security Summit</option>
+              <option value="Cultural Fest">Cultural Fest</option>
+              <option value="Sports Meet">Sports Meet</option>
+              <option value="Startup Pitch Day">Startup Pitch Day</option>
+            </select>
+            <div class="error-text" id="eventSelectError"></div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Register Now</button>
+            <button type="reset" class="btn btn-outline" id="resetBtn">Reset</button>
+          </div>
+
+        </form>
+
+        <!-- Success Message (hidden by default) -->
+        <div class="success-card" id="successCard" style="display:none;">
+          <div class="success-icon">&#10003;</div>
+          <h2>Registration Successful</h2>
+          <p>Thank you for registering. We look forward to seeing you at the event.</p>
+          <button class="btn btn-primary" id="registerAnotherBtn">Register Another Event</button>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Campus Event Manager. All rights reserved.</p>
+      <p>Campus Event Manager &amp;copy; 2026. Developed for Source Code Management Lab</p>
     </div>
   </footer>
 
-  <!-- ===== Back to Top Button ===== -->
+  <!-- ===== Back to Top ===== -->
   <button id="backToTop" class="back-to-top" title="Back to top">&uarr;</button>
 
   <!-- ===== Scripts ===== -->
