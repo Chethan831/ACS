@@ -8,22 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campus Event Manager - Home</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { corePlugins: { preflight: false } }
+  </script>
 </head>
 <body>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="navbar" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" class="logo" aria-label="Go to homepage">
+    <div class="container sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+      <a href="index.html" class="logo min-h-[44px] inline-flex items-center" aria-label="Go to homepage">
         <span class="logo-icon">CE</span>
         Campus Events
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html" aria-label="Home page">Home</a></li>
-        <li><a href="events.html" aria-label="Browse events">Events</a></li>
-        <li><a href="register.html" aria-label="Register for events">Register</a></li>
-        <li><a href="admin.html" aria-label="Admin dashboard">Admin</a></li>
+      <ul class="nav-links flex-wrap gap-2">
+        <li><a href="index.html" class="min-h-[44px] inline-flex items-center" aria-label="Home page">Home</a></li>
+        <li><a href="events.html" class="min-h-[44px] inline-flex items-center" aria-label="Browse events">Events</a></li>
+        <li><a href="register.html" class="min-h-[44px] inline-flex items-center" aria-label="Register for events">Register</a></li>
+        <li><a href="admin.html" class="min-h-[44px] inline-flex items-center" aria-label="Admin dashboard">Admin</a></li>
       </ul>
     </div>
   </nav>
@@ -31,9 +35,9 @@
   <main id="main-content">
     <section class="hero">
     <div class="hero-content">
-      <h1>Campus Event Manager</h1>
+      <h1 class="text-balance">Campus Event Manager</h1>
       <p>Discover, register, and stay updated with college events.</p>
-      <a href="events.html" class="btn btn-primary">Explore Events</a>
+      <a href="events.html" class="btn btn-primary w-full sm:w-auto">Explore Events</a>
     </div>
   </section>
 
@@ -41,7 +45,7 @@
   <section class="stats-section" aria-labelledby="stats-title">
     <div class="container">
       <h2 id="stats-title" class="section-title">Our Reach</h2>
-      <div class="stats-grid">
+      <div class="stats-grid gap-4 sm:gap-6">
         <!-- Stat 1: Upcoming Events -->
         <div class="stat-card">
           <div class="stat-icon" aria-hidden="true">📅</div>
@@ -66,7 +70,7 @@
   <section class="featured-section" aria-labelledby="featured-title">
     <div class="container">
       <h2 id="featured-title" class="section-title">Featured Events</h2>
-      <div class="event-grid">
+      <div class="event-grid gap-4 sm:gap-6">
 
         <!-- Featured Event Card 1: AI Workshop -->
         <div class="event-card">

@@ -8,22 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Event Manager - Register</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { corePlugins: { preflight: false } }
+  </script>
 </head>
 <body>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="navbar" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" class="logo" aria-label="Go to homepage">
+    <div class="container sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+      <a href="index.html" class="logo min-h-[44px] inline-flex items-center" aria-label="Go to homepage">
         <span class="logo-icon">CE</span>
         Campus Events
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html" aria-label="Home page">Home</a></li>
-        <li><a href="events.html" aria-label="Browse events">Events</a></li>
-        <li><a href="register.html" aria-label="Register for events">Register</a></li>
-        <li><a href="admin.html" aria-label="Admin dashboard">Admin</a></li>
+      <ul class="nav-links flex-wrap gap-2">
+        <li><a href="index.html" class="min-h-[44px] inline-flex items-center" aria-label="Home page">Home</a></li>
+        <li><a href="events.html" class="min-h-[44px] inline-flex items-center" aria-label="Browse events">Events</a></li>
+        <li><a href="register.html" class="min-h-[44px] inline-flex items-center" aria-label="Register for events">Register</a></li>
+        <li><a href="admin.html" class="min-h-[44px] inline-flex items-center" aria-label="Admin dashboard">Admin</a></li>
       </ul>
     </div>
   </nav>
@@ -31,7 +35,7 @@
   <main id="main-content">
     <section class="page-hero">
     <div class="page-hero-content">
-      <h1>Event Registration</h1>
+      <h1 class="text-balance">Event Registration</h1>
       <p>Complete the form below to reserve your seat for an upcoming event.</p>
     </div>
   </section>
@@ -45,39 +49,39 @@
 
         <h2>Student Details</h2>
 
-        <form id="registrationForm" novalidate>
+        <form id="registrationForm" novalidate class="space-y-4">
 
           <!-- Full Name -->
           <div class="form-group">
             <label for="fullName">Full Name <span class="required">*</span></label>
-            <input type="text" id="fullName" placeholder="Enter your full name" autocomplete="name" />
+            <input type="text" id="fullName" placeholder="Enter your full name" autocomplete="name" class="w-full" />
             <div class="error-text" id="fullNameError" role="alert"></div>
           </div>
 
           <!-- USN -->
           <div class="form-group">
             <label for="usn">USN <span class="required">*</span></label>
-            <input type="text" id="usn" placeholder="e.g. 1AY21CS001" autocomplete="off" />
+            <input type="text" id="usn" placeholder="e.g. 1AY21CS001" autocomplete="off" class="w-full" />
             <div class="error-text" id="usnError" role="alert"></div>
           </div>
 
           <!-- Department -->
           <div class="form-group">
             <label for="department">Department <span class="required">*</span></label>
-            <input type="text" id="department" placeholder="e.g. Computer Science" autocomplete="off" />
+            <input type="text" id="department" placeholder="e.g. Computer Science" autocomplete="off" class="w-full" />
             <div class="error-text" id="departmentError" role="alert"></div>
           </div>
 
           <!-- Email + Phone side by side -->
-          <div class="form-row">
-            <div class="form-group">
+          <div class="form-row sm:gap-4">
+            <div class="form-group sm:flex-1">
               <label for="email">Email Address <span class="required">*</span></label>
-              <input type="email" id="email" placeholder="you@example.com" autocomplete="email" />
+              <input type="email" id="email" placeholder="you@example.com" autocomplete="email" class="w-full" />
               <div class="error-text" id="emailError" role="alert"></div>
             </div>
-            <div class="form-group">
+            <div class="form-group sm:flex-1">
               <label for="phone">Phone Number <span class="required">*</span></label>
-              <input type="tel" id="phone" placeholder="9876543210" autocomplete="tel" />
+              <input type="tel" id="phone" placeholder="9876543210" autocomplete="tel" class="w-full" />
               <div class="error-text" id="phoneError" role="alert"></div>
             </div>
           </div>
@@ -85,7 +89,7 @@
           <!-- Event Dropdown -->
           <div class="form-group">
             <label for="eventSelect">Select Event <span class="required">*</span></label>
-            <select id="eventSelect">
+            <select id="eventSelect" class="w-full">
               <option value="">-- Choose an event --</option>
               <option value="AI Workshop">AI Workshop</option>
               <option value="Web Development Bootcamp">Web Development Bootcamp</option>
@@ -100,9 +104,9 @@
           </div>
 
           <!-- Action Buttons -->
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Register Now</button>
-            <button type="reset" class="btn btn-outline" id="resetBtn">Reset</button>
+          <div class="form-actions gap-3">
+            <button type="submit" class="btn btn-primary w-full sm:w-auto min-h-[44px]">Register Now</button>
+            <button type="reset" class="btn btn-outline w-full sm:w-auto min-h-[44px]" id="resetBtn">Reset</button>
           </div>
 
         </form>
@@ -112,7 +116,7 @@
           <div class="success-icon" aria-hidden="true">&#10003;</div>
           <h2>Registration Successful</h2>
           <p>Thank you for registering. We look forward to seeing you at the event.</p>
-          <button class="btn btn-primary" id="registerAnotherBtn">Register Another Event</button>
+          <button class="btn btn-primary min-h-[44px]" id="registerAnotherBtn">Register Another Event</button>
         </div>
 
       </div>
