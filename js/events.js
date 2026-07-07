@@ -142,12 +142,7 @@ var eventsData = [
     if (!container) return;
 
     if (events.length === 0) {
-      container.innerHTML =
-        '<div class="empty-state" role="status">' +
-          '<div class="empty-icon">🔍</div>' +
-          '<h3>No events found.</h3>' +
-          '<p>Try another search or category.</p>' +
-        '</div>';
+      App.renderEmptyState(container, '🔍', 'No events found.', 'Try another search or category.');
       return;
     }
 

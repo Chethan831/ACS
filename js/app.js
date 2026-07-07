@@ -31,6 +31,16 @@ App.showSpinner = function (container) {
   container.innerHTML = '<div class="loading" role="status" aria-label="Loading"><div class="spinner"></div></div>';
 };
 
+App.renderEmptyState = function (container, icon, title, message) {
+  if (!container) return;
+  container.innerHTML =
+    '<div class="empty-state" role="status">' +
+      '<div class="empty-icon" aria-hidden="true">' + icon + '</div>' +
+      '<h3>' + title + '</h3>' +
+      (message ? '<p>' + message + '</p>' : '') +
+    '</div>';
+};
+
 App.loadWithSpinner = function (container, renderFn) {
   App.showSpinner(container);
   setTimeout(function () {
