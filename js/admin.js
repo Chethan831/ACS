@@ -1,7 +1,3 @@
-/* ============================================================
-   Campus Event Manager - Admin Dashboard Logic
-   ============================================================ */
-
 (function () {
   var tableBody = document.getElementById('adminTableBody');
   var emptyState = document.getElementById('adminEmpty');

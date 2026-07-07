@@ -1,7 +1,3 @@
-/* ============================================================
-   Campus Event Manager - Registration Logic
-   ============================================================ */
-
 (function () {
   var form = document.getElementById('registrationForm');
   var formCard = document.getElementById('formCard');
