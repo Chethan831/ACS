@@ -128,9 +128,9 @@ var eventsData = [
             '👤 ' + seatsInfo.label +
           '</span>' +
           '<div class="event-card-meta">' +
-            '<span><span class="meta-icon">📅</span> ' + ev.date + '</span>' +
-            '<span><span class="meta-icon">⏰</span> ' + ev.time + '</span>' +
-            '<span><span class="meta-icon">📍</span> ' + ev.venue + '</span>' +
+            '<span><span class="meta-icon" aria-hidden="true">📅</span> ' + ev.date + '</span>' +
+            '<span><span class="meta-icon" aria-hidden="true">⏰</span> ' + ev.time + '</span>' +
+            '<span><span class="meta-icon" aria-hidden="true">📍</span> ' + ev.venue + '</span>' +
           '</div>' +
           '<a href="register.html" class="btn btn-primary btn-sm">Register Now</a>' +
         '</div>' +
@@ -143,7 +143,7 @@ var eventsData = [
 
     if (events.length === 0) {
       container.innerHTML =
-        '<div class="empty-state">' +
+        '<div class="empty-state" role="status">' +
           '<div class="empty-icon">🔍</div>' +
           '<h3>No events found.</h3>' +
           '<p>Try another search or category.</p>' +
