@@ -74,3 +74,8 @@ App.isToday = function (isoString) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+(function setCurrentYear() {
+  var yearEl = document.getElementById('currentYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
