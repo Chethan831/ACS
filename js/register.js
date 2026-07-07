@@ -42,38 +42,38 @@
   }
 
   function validateName(value) {
-    if (!value.trim()) return 'Full name is required.';
-    if (value.trim().length < 2) return 'Name must be at least 2 characters.';
+    if (!value.trim()) return 'Please enter your full name. This field cannot be left empty.';
+    if (value.trim().length < 2) return 'Full name must be at least 2 characters long. Please enter a valid name.';
     return null;
   }
 
   function validateUSN(value) {
-    if (!value.trim()) return 'USN is required.';
+    if (!value.trim()) return 'Please enter your USN (University Serial Number), e.g., 1AY21CS001.';
     return null;
   }
 
   function validateDepartment(value) {
-    if (!value.trim()) return 'Department is required.';
+    if (!value.trim()) return 'Please enter your department name, e.g., Computer Science.';
     return null;
   }
 
   function validateEmail(value) {
-    if (!value.trim()) return 'Email address is required.';
+    if (!value.trim()) return 'Please enter your email address, e.g., you@example.com.';
     if (value.trim().indexOf('@') === -1 || value.trim().indexOf('.') === -1) {
-      return 'Enter a valid email address.';
+      return 'Please enter a valid email address with the format username@domain.com.';
     }
     return null;
   }
 
   function validatePhone(value) {
     var digits = value.trim().replace(/\D/g, '');
-    if (!value.trim()) return 'Phone number is required.';
-    if (digits.length !== 10) return 'Phone number must be exactly 10 digits.';
+    if (!value.trim()) return 'Please enter your 10-digit phone number, e.g., 9876543210.';
+    if (digits.length !== 10) return 'Phone number must be exactly 10 digits. Enter a valid 10-digit phone number without country code.';
     return null;
   }
 
   function validateEvent(value) {
-    if (!value) return 'Please select an event.';
+    if (!value) return 'Please select an event from the dropdown list to continue registration.';
     return null;
   }
 
